@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes }  from '@angular/router'
-import { DisplayMiBandStatsComponent } from 'src/app/digital/display-mi-band-stats.component';
-import { ArDisplayMiBandComponent } from 'src/app/ar/ar-display-mi-band.component';
+import { RouterModule, Routes }  from '@angular/router';
 import { AuthGaurdService } from 'src/app/auth-gaurd.service';
+import { ArComponent } from './ar/ar.component';
 
 const routes:Routes=[
-  {path:'digital-mi-display',component:DisplayMiBandStatsComponent,canActivate:[AuthGaurdService]},
-  {path:'ar-mi-display',component:ArDisplayMiBandComponent,canActivate:[AuthGaurdService]},
+  {path:'digital-mi-display',component:ArComponent,canActivate:[AuthGaurdService]},
   {path: '',   redirectTo: '/', pathMatch: 'full'}
 
 ];

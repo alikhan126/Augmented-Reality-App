@@ -4,21 +4,19 @@ import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
 
 
 import { AppComponent } from './app.component';
-import { DisplayMiBandStatsComponent } from './digital/display-mi-band-stats.component';
-import { ArDisplayMiBandComponent } from './ar/ar-display-mi-band.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { ArComponent } from './ar/ar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayMiBandStatsComponent,
-    ArDisplayMiBandComponent
+    ArComponent
   ],
   imports: [
     BrowserModule,
     WebBluetoothModule.forRoot({
-      //Cannot be made false. GitHub issue: https://github.com/manekinekko/angular-web-bluetooth/issues/41
-      enableTracing: true 
+      // Cannot be made false. GitHub issue: https://github.com/manekinekko/angular-web-bluetooth/issues/41
+      enableTracing: true
     }),
     AppRoutingModule
   ],

@@ -1,24 +1,3 @@
-<div class="bleNotSupported" *ngIf="bleNotSupported">
-  Your browser does not support Smart Bluetooth. See
-  <a href='http://caniuse.com/#search=Bluetooth'>here</a> for more details.
-</div>
-<div class="bleNotSupported" *ngIf="errorDuringPairing">
-  Error occured during pairing. {{pairingErrorMssg}}
-</div>
-<div *ngIf='!hideAllButARDisplay'>
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-  </div>
-
-  <button #PairingButton *ngIf="!bleNotSupported && !ifPaired" (click)='doPairing()' [disabled]='disablePairingButton'>{{PairDeviceButtonLabel}}</button>
-  <div class="loader" *ngIf='!ifPaired && pairingStarted'></div>
-
-  <div *ngIf="ifPaired">
-    <button (click)='displayDigitalMiDisplay()'>Digital MI Display</button>
-    <button (click)='displayARMiDisplay()'>AR MI Display</button>
-  </div>
-</div>
+<app-ar></app-ar>
 
 <router-outlet></router-outlet>
